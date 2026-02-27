@@ -107,7 +107,3 @@ const services = ref([
     }
 ])
 </script>
-
-<style scoped>
-
-</style>
