@@ -28,7 +28,7 @@
                 class="text-white pt-6 text-justify lg:text-left text-lg leading-relaxed"
                 data-aos="fade-left"
                 data-aos-delay="200">
-                    Comencé como autodidacta aprendiendo marketing y diseño gráfico. Descubrí mi pasión por el diseño web en el instituto estudiando técnico en diseño, donde tenía asignaturas de programación y diseño plataformas digitales.<br/>
+                    Comencé como autodidacta aprendiendo marketing y diseño gráfico. Descubrí mi pasión por el diseño web en el instituto, estudiando técnico en diseño, donde tenía asignaturas de programación y diseño plataformas digitales.<br/>
                     Esto me llevó a seguir aprendiendo de forma autónoma hasta llegar a la certificación de "TALENTO DIGITAL" impartida por Sence durante la temporada 2025-2026.              
                 </p>
             </div>

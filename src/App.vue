@@ -4,6 +4,7 @@
       <Hero />
       <About/>
       <Services/>
+      <Skills/>
   </div> 
 </template>
 
@@ -15,7 +16,7 @@ import Navbar from './components/Navbar.vue';
 import Hero from './components/Hero.vue';
 import About from './components/About.vue';
 import Services from './components/Services.vue';
-
+import Skills from './components/Skills.vue';
 
 
 const loading = ref(true);
