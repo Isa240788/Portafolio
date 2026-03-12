@@ -151,11 +151,12 @@ const handleSend = async () => {
   
   try {
     // Usamos las variables del .env que creamos
+    //Profesor, las llaves son públicas por diseño del servicio, pero la seguridad real está en que el servicio solo permite el envío a mi correo personal verificado y para mantenerlas secretas, necesitaba hacer un Upgrade del servicio.
     await emailjs.send(
-      import.meta.env.VITE_EMAILJS_SERVICE_ID, 
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID, 
+      'service_36q5vvr', 
+      'template_to4scmu', 
       formData.value,
-      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      'xc4rn_bsnSdVgytZ3'
     );
 
     // Si sale bien, mostramos el Toast
