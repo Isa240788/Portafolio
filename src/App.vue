@@ -1,10 +1,13 @@
 <template>
-   <div class="min-h-screen bg-linear-to-br from-gray-900 via-blue-900 to-gray-900">  
+   <div class="min-h-screen bg-[#0a0f1d]">  
       <Navbar />
       <Hero />
-      <About/>
-      <Services/>
-      <Skills/>
+      <Trayectoria/>
+      <Expertise />
+      <Proyectos/>
+      <Footer />
+
+      <ScrollToTop />
   </div> 
 </template>
 
@@ -14,10 +17,11 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import Navbar from './components/Navbar.vue';
 import Hero from './components/Hero.vue';
-import About from './components/About.vue';
-import Services from './components/Services.vue';
-import Skills from './components/Skills.vue';
-
+import Trayectoria from './components/Trayectoria.vue';
+import Expertise from './components/Expertise.vue';
+import Proyectos from './components/Proyectos.vue';
+import Footer from './components/Footer.vue';
+import ScrollToTop from './components/ScrollToTop.vue';
 
 const loading = ref(true);
 
@@ -36,7 +40,3 @@ onMounted(async ()=>{
 });
 
 </script>
-
-<style scoped>
-
-</style>
