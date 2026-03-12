@@ -29,26 +29,38 @@
       </div>
 
       <!-- 📱 MENÚ MÓVIL (Dropdown con Heroicons) -->
-        <div class="md:hidden flex-none">
-            <div class="dropdown dropdown-end">
-                <label tabindex="0" class="btn btn-ghost btn-circle text-white" @click="isMenuOpen = !isMenuOpen">
-                <!-- ✅ Usamos Heroicons para evitar errores de SVG manual -->
-                    <component 
-                    :is="isMenuOpen ? XMarkIcon : Bars3Icon" 
-                    class="h-6 w-6 transition-all duration-300"
-                    />
-                </label>
-                
-                <!-- El menú Glassmorphism se mantiene igual de pro -->
-                <ul v-if="isMenuOpen" tabindex="0" class="menu menu-sm dropdown-content mt-4 p-4 shadow-2xl backdrop-blur-3xl bg-black/80 rounded-3xl w-64 border border-white/10 space-y-2">
-                    <li v-for="item in Menu" :key="item.name">
-                        <a :href="item.href" @click="scrollToSection(item.href)" class="font-bold uppercase text-[10px] tracking-widest text-white/80 py-3  hover:bg-pink-600 hover:text-white hover:border-pink-500 hover:scale-110 cursor-default transition-all duration-300">
-                            {{ item.name }}
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+<!-- 📱 MENÚ MÓVIL (Con control total de Vue) -->
+<div class="md:hidden flex-none relative">
+    <!-- Botón con Icono Dinámico -->
+    <button 
+      @click="isMenuOpen = !isMenuOpen" 
+      class="btn btn-ghost btn-circle text-white focus:bg-transparent active:bg-transparent"
+    >
+        <component 
+          :is="isMenuOpen ? XMarkIcon : Bars3Icon" 
+          class="h-6 w-6 transition-all duration-300"
+        />
+    </button>
+    
+    <!-- El menú con transiciones de Vue -->
+    <transition name="fade-slide">
+      <ul 
+        v-if="isMenuOpen" 
+        class="absolute top-16 right-0 p-4 shadow-2xl backdrop-blur-3xl bg-black/90 rounded-3xl w-64 border border-white/10 space-y-2 z-[100]"
+      >
+          <li v-for="item in Menu" :key="item.name">
+              <a 
+                :href="item.href" 
+                @click="scrollToSection(item.href)" 
+                class="flex font-bold uppercase text-[10px] tracking-widest text-white/80 py-4 px-4 hover:bg-pink-600 hover:text-white rounded-2xl transition-all duration-300"
+              >
+                  {{ item.name }}
+              </a>
+          </li>
+      </ul>
+    </transition>
+</div>
+
 
 
     </nav>
@@ -74,3 +86,13 @@ const scrollToSection = (href) => {
     }
 }
 </script>
+
+<style scoped>
+.fade-slide-enter-active, .fade-slide-leave-active {
+  transition: all 0.3s ease;
+}
+.fade-slide-enter-from, .fade-slide-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+</style>
